@@ -6,11 +6,11 @@ import { SendMail } from "./components/mailer.js";
     createApp({
         data() {
             return {
-                erroFirstname: false,
-                erroLastname: false,
-                erroEmail: false,
-                erroMassage: false,
-                sucessMassage: false,
+                errorFirstname: false,
+                errorLastname: false,
+                errormail: false,
+                errormessage: false,
+                successmsg: false,
 
                 form: {
                     firstname: "",
@@ -26,48 +26,48 @@ import { SendMail } from "./components/mailer.js";
 
                 if (this.form.firstname.length > 0) {
                     this.$refs.fname.classList.remove("error");
-                    this.erroFirstname = false;
+                    this.errorFirstname = false;
                 } else {
                     this.$refs.fname.classList.add("error");
-                    this.erroFirstname = true;
+                    this.errorFirstname = true;
                 }
 
                 if (this.form.lastname.length > 0) {
                     this.$refs.lname.classList.remove("error");
-                    this.erroLastname = false;
+                    this.errorLastname = false;
                 } else {
                     this.$refs.lname.classList.add("error");
-                    this.erroLastname = true;
+                    this.errorLastname = true;
                 }
 
                 if (this.form.email.length > 0) {
                     this.$refs.email.classList.remove("error");
-                    this.erroEmail = false;
+                    this.errormail = false;
                 } else {
                     this.$refs.email.classList.add("error");
-                    this.erroEmail = true;
+                    this.errormail = true;
                 }
 
                 if (this.form.text.length > 0) {
                     this.$refs.message.classList.remove("error");
-                    this.erroMassage = false;
+                    this.errormessage = false;
                 } else {
                     this.$refs.message.classList.add("error");
-                    this.erroMassage = true;
+                    this.errormessage = true;
                 }
 
             },
 
             processMailSuccess(result) {
-                this.sucessMassage = true;
+                this.successmsg = true;
                 this.$refs.fname.classList.remove("error");
                 this.$refs.lname.classList.remove("error");
                 this.$refs.email.classList.remove("error");
                 this.$refs.message.classList.remove("error");
-                this.erroFirstname = false;
-                this.erroLastname = false;
-                this.erroEmail = false;
-                this.erroMassage = false;
+                this.errorFirstname = false;
+                this.errorLastname = false;
+                this.errormail = false;
+                this.errorMessage = false;
             },
 
             processMail(event) {
