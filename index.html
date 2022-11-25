@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mail Ref</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <main>
+        <div class="container">
+            <h1 class="hidden">Mail Reference for API Processing</h1>
+            <h2 class="header">Contact Me</h2>
+            <p class="info">
+                Have any Queries or need information about anything, you are at right place, Just fill out this Form and have a cup of coffee until we get back to you super fast.
+            </p>
+
+            <h2 class="mail-header">Processing Mail with AJAX</h2>
+        </div>
+        <div class="form_container">
+
+            <form action="send.php" method="POST" id="mail-form">
+                <label for="firstname">First Name</label>
+                <input ref="fname" type="text" id="firstname" name="firstname" required="required">
+
+                <label for="lastname">Last Name</label>
+                <input ref="lname" type="text" id="lastname" name="lastname" required>
+
+                <label for="firstname">Email</label>
+                <input ref="email" type="email" id="email" name="email" required>
+
+                <label for="message">Your Message</label>
+                <textarea ref="message" name="message" id="message" cols="30" rows="10"></textarea>
+
+                <label for="phone">Your Phone # <i>(optional)</i></label>
+                <input ref="phone" type="tel" value="tel" name="phone">
+
+                <div class="wrapper">
+                    <input @click.prevent="processMail" type="submit" class="submit" value="Go!">
+                    <i class="fas fa-paper-plane"></i>
+                </div>
+            </form>
+        </div>
+    </main>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script src="js/main.js" type="module" defer></script>
+</body>
+
+</html>
