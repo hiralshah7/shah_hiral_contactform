@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mail Ref</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <main id="app">
+        <div class="wrapper" v-model="box">
+            <div class="main_body">
+                <div class="main_container">
+                    <h1 class="hidden">Mail Reference for API Processing</h1>
+                    <h2 class="header">Contact Me</h2>
+                    <p class="info">
+                        Have any Queries or need information about anything, you are at right place, Just fill out this Form and have a cup of coffee until we get back to you super fast.
+                    </p>
+                </div>
+                <div class="form_body">
+                    <div class="sub_body">
+                        <form action="send.php" method="POST" id="mail-form" class="contact-box">
+                            <ul>
+                                <!-- first name check-->
+                                <div class="flname">
+                                    <li>
+                                        <label for="firstname">First Name</label>
+                                        <div class="errorMessage" v-if=" errorFirstname">
+                                            <p>Did You Miss Your First Name?</p>
+                                        </div>
+                                        <input class="input" v-model="form.firstname" ref="fname" type="text" id="firstname" name="firstname" required="required">
+                                    </li>
+                                    <!-- end of first name-->
+                                    <div class="subbody2">
+                                        <!-- last name check-->
+                                        <li>
+                                            <label for="lastname">Last Name</label>
+                                            <div class="errorMessage" v-if="errorLastname">
+                                                <p>Did you miss your last Name?</p>
+                                            </div>
+                                            <input class="input" v-model="form.lastname" ref="lname" type="text" id="lastname" name="lastname" required="required">
+                                        </li>
+                                    </div>
+                                </div>
+                                <!-- end of last name check-->
+                                <!-- <div class="formbody2">-->
+                                <div class="formbody3">
+                                    <!-- passing email check-->
+                                    <li>
+                                        <label for="email">Email</label>
+                                        <div class="errorMessage" v-if="errormail">
+                                            <p>Can you check your mail address again?</p>
+                                        </div>
+                                        <input class="input" v-model="form.email" ref="email" type="email" id="email" name="email" required="required">
+                                    </li>
+                                    <!-- end of email check-->
+                                    <!-- message check -->
+                                    <li>
+                                        <label for="message">Message</label>
+                                        <div class="errorMessage" v-if="errormessage">
+                                            <p>Oh, You miss the main part</p>
+                                        </div>
+
+                                        <textarea class="input" v-model="form.text" ref="message" name="message" id="message" cols="30" rows="10"></textarea>
+                                    </li>
+                                    <!-- end of the message check-->
+                                    <!-- button bar-->
+                                    <li>
+                                        <!-- <div class="wrapper"> -->
+                                        <button @click.prevent="processMail" type="submit" class="button" value="Send Mail">Send Mail</button></li>
+                                    <!-- for succsess-->
+                                    <div class="onsucess" v-if="successmsg">
+                                        <p class="onsucces">Your message has been sent successfully!</p>
+                                    </div>
+
+                                </div>
+                            </ul>
+                        </form>
+                    </div>
+    </main>
+
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script src="js/main.js" type="module" defer></script>
+</body>
+
+</html>
