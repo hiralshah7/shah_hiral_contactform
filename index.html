@@ -65,7 +65,7 @@
                                             <p>Oh, You miss the main part</p>
                                         </div>
 
-                                        <textarea class="input" v-model="form.text" ref="message" name="message" id="message" cols="30" rows="10"></textarea>
+                                        <textarea class="input" v-model="form.text" ref="message" name="message" id="message"></textarea>
                                     </li>
                                     <!-- end of the message check-->
                                     <!-- button bar-->
@@ -73,7 +73,7 @@
                                         <!-- <div class="wrapper"> -->
                                         <button @click.prevent="processMail" type="submit" class="button" value="Send Mail">Send Mail</button></li>
                                     <!-- for succsess-->
-                                    <div class="onsucess" v-if="successmsg">
+                                    <div class="onsuccess" v-if="successmsg">
                                         <p class="onsucces">Your message has been sent successfully!</p>
                                     </div>
 
